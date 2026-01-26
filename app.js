@@ -20,7 +20,7 @@ endpoints: {
 'PUT /todos/:id': 'Modifier un todo', 
 'DELETE /todos/:id': 'Supprimer un todo', 
 'GET /health': 'Status de l\'API' 
-}, 
+},  
 version: '1.0.0' 
 }); 
 }); 
