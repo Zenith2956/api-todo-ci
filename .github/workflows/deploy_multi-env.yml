@@ -58,7 +58,7 @@ jobs:
 
  - name: Health check Staging
  run: |
- response=$(curl -s -o /dev/null -w "%{http_code}" https://api-todo-Arthurstaging.onrender.com/health)
+ response=$(curl -s -o /dev/null -w "%{http_code}" https://api-todo-Arthur-staging.onrender.com/health)
  if [ $response -eq 200 ]; then
  echo "Staging is healthy"
  else
@@ -107,7 +107,7 @@ jobs:
 
  - name: Health check Production
  run: |
- response=$(curl -s -o /dev/null -w "%{http_code}" https://api-todo-Arthurprod.onrender.com/health)
+ response=$(curl -s -o /dev/null -w "%{http_code}" https://api-todo-Arthur-prod.onrender.com/health)
  if [ $response -eq 200 ]; then
  echo "Production is healthy"
  else
