@@ -26,20 +26,7 @@ app.get('/', (req, res) => {
  }
  });
 });
-// app.get('/', (req, res) => { 
-// res.json({ 
-// message: 'API TODO - Déploiement Automatique Fonctionne !', 
-// endpoints: { 
-// 'GET /todos': 'Liste des todos', 
-// 'GET /todos/:id': 'Un todo spécifique', 
-// 'POST /todos': 'Créer un todo', 
-// 'PUT /todos/:id': 'Modifier un todo', 
-// 'DELETE /todos/:id': 'Supprimer un todo', 
-// 'GET /health': 'Status de l\'API' 
-// },  
-// version: '1.0.0' 
-// }); 
-// }); 
+
 // GET /todos - Récupérer tous les todos 
 app.get('/todos', (req, res) => { 
 res.json({ 
@@ -121,6 +108,22 @@ uptime: process.uptime(),
 todos_count: todos.length 
 }); 
 }); 
+
+// GET /stats - Statistiques
+app.get('/stats', (req, res) => {
+ const completed = todos.filter(t => t.completed).length;
+ const active = todos.filter(t => !t.completed).length;
+
+ res.json({
+ total: todos.length,
+ completed: completed,
+ active: active,
+ completion_rate: todos.length > 0
+ ? Math.round((completed / todos.length) * 100)
+ : 0
+ });
+});
+
 // Route 404 
 app.use((req, res) => { 
 res.status(404).json({ error: 'Route non trouvée' }); 
