@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
  res.json({
  message: 'API TODO - CI/CD Demo',
  environment: env, // ← AJOUT
- version: '1.0.0',
+ version: '1.0.2',
  endpoints: {
  'GET /todos': 'Liste des todos',
  'GET /todos/:id': 'Un todo spécifique',
