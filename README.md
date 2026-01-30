@@ -27,7 +27,7 @@ graph LR
  K --> L[Deploy Production]
  J -->|Non| M[Stop]
 ```
----
+--- 
 ## Endpoints API
 | Méthode | Route | Description | Exemple |
 |---------|-------|-------------|---------|
