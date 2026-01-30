@@ -37,7 +37,7 @@ jobs:
  if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
  environment:
  name: staging
- url: https://api-todo-arthur-staging.onrender.com
+ url: https://api-todo-ci-arthur-prod.onrender.com/
 
  steps:
  - name: Trigger Staging Deploy
@@ -128,4 +128,4 @@ jobs:
  run: |
  echo "Deployment to production complete!"
  echo "Version: ${{ steps.tag.outputs.version }}"
- echo "URL: https://api-todo-arthur-prod.onrender.com"
+ echo "URL: https://api-todo-arthur-prod.onrender.com/"
