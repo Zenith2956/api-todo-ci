@@ -117,8 +117,8 @@ jobs:
 
  - name: Push Version Tag
  run: |
- git config user.name "GitHub Actions"
- git config user.email "actions@github.com"
+ git config user.name "Zenith2956"
+ git config user.email "arthur.crozon@gmail.com"
  git tag -a ${{ steps.tag.outputs.version }} -m "Release ${{ steps.tag.outputs.version }}"
  git push origin ${{ steps.tag.outputs.version }}
  env:
